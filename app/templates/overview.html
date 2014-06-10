@@ -1,0 +1,37 @@
+{% extends 'base-bootstrap.html' %}
+{% block title %} Overview {% endblock %}
+{% block content %}
+ <h2 class="sub-header">Overview</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Hostname</th>
+        <th>IP</th>
+        <th>Urls</th>
+      </tr>
+    </thead>
+      
+      
+      <tr>
+        {% for query in queryset %}
+          {% if query.slug %}
+            <td><a href='customers/{{ query.slug }}'>{{ query.slug }}</a></td>
+          {% endif %}
+      
+          <td> {{ query }}</td>
+      
+          {% if query.ip %}
+            <td>{{ query.ip }}</td>
+          {% endif %}
+      
+          {% if query.urls %}
+            <td>{{ query.urls }}</td>
+          {% endif %}
+      
+      </tr>
+     {% endfor %}
+  </table>
+</div>
+{% endblock %}

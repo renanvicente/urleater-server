@@ -1,0 +1,36 @@
+{% extends 'base-bootstrap.html' %}
+{% block title %}Overview {{ queryset.0.slug }} {% endblock %}
+{% block content %}
+<h2 class="sub-header">Overview {{ queryset.0.slug }}</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Hostname</th>
+        <th>IP</th>
+        <th>Urls</th>
+      </tr>
+    </thead>
+      <tr>
+        {% for query in queryset %}
+          {% if query.slug %}
+            <td>{{ query.slug }}</td>
+          {% endif %}
+      
+          <td> {{ query }}</td>
+      
+          {% if query.ip %}
+            <td>{{ query.ip }}</td>
+          {% endif %}
+      
+          {% if query.urls %}
+            <td>{{ query.urls }}</td>
+          {% endif %}
+      </tr>
+     {% endfor %}
+  </table>
+</div>
+<p><button type="button" onclick="window.location.href='/'" class="btn btn-primary">Back</button></p>
+
+{% endblock %}
