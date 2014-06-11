@@ -10,15 +10,10 @@
  <!-- jQuery -->
     <script src="/static/js/jquery-1.4.4.min.js"></script>
 
-	<!-- Demo stuff -->
 	<link rel="stylesheet" href="/static/css/jq.css">
-	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
-	<link href="/static/css/prettify.css" rel="stylesheet">
-	<script src="/static/js/prettify.js"></script>
-	<script src="/static/js/docs.js"></script>
 
  <!-- Bootstrap core CSS -->
-<!--    <link href="/static/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet"> 
     <!-- Custom styles for this template -->
     <link href="/static/css/dashboard.css" rel="stylesheet">
   <!-- bootstrap widget theme -->
@@ -27,7 +22,6 @@
     <script src="/static/js/jquery.tablesorter.js"></script>
   <!-- tablesorter widget file - loaded after the plugin -->
     <script src="/static/js/jquery.tablesorter.widgets.js"></script> 
-  <!-- Tablesorter: optional -->
     <link rel="stylesheet" href="/static/css/jquery.tablesorter.pager.css">
     <script src="/static/js/jquery.tablesorter.pager.js"></script> 
 
@@ -101,40 +95,6 @@
 
 });</script>
 
-	<script>
-	$(function(){
-
-		// filter button demo code
-		$('button.filter').click(function(){
-			var col = $(this).data('column'),
-				txt = $(this).data('filter');
-			$('table').find('.tablesorter-filter').val('').eq(col).val(txt);
-			$('table').trigger('search', false);
-			return false;
-		});
-
-		// toggle zebra widget
-		$('button.zebra').click(function(){
-			var t = $(this).hasClass('btn-success');
-//			if (t) {
-				// removing classes applied by the zebra widget
-				// you shouldn't ever need to use this code, it is only for this demo
-//				$('table').find('tr').removeClass('odd even');
-//			}
-			$('table')
-				.toggleClass('table-striped')[0]
-				.config.widgets = (t) ? ["uitheme", "filter"] : ["uitheme", "filter", "zebra"];
-			$(this)
-				.toggleClass('btn-danger btn-success')
-				.find('i')
-				.toggleClass('icon-ok icon-remove glyphicon-ok glyphicon-remove').end()
-				.find('span')
-				.text(t ? 'disabled' : 'enabled');
-			$('table').trigger('refreshWidgets', [false]);
-			return false;
-		});
-	});
-	</script>
 
   <title> {% block title %} {% endblock %} URLEater </title>
 </head>
