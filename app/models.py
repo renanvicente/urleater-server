@@ -10,5 +10,5 @@ class Url(models.Model):
   def __unicode__(self):
     return u'%s' % self.title
 
-  class Meta:
-    ordering = ['-title']
+#  class Meta:
+#    ordering = ['slug']
