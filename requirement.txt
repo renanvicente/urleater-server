@@ -3,5 +3,6 @@ MySQL-python==1.2.5
 South==0.8.4
 argparse==1.2.1
 django-admin-bootstrapped==1.6.5
+django-queryset-csv==0.2.8
 simplejson==3.5.2
 wsgiref==0.1.2
